@@ -240,7 +240,7 @@ window.Calendly.initInlineWidget({
               <h3 className="text-xl font-playfair font-semibold text-charcoal mb-4">Wardrobe Analysis</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
               <p className="text-charcoal/70 font-montserrat">
-                We'll help you assess your current wardrobe and identify key pieces to add for maximum versatility. Transform your closet into a curated collection that truly represents your style.
+                We&apos;ll help you assess your current wardrobe and identify key pieces to add for maximum versatility. Transform your closet into a curated collection that truly represents your style.
               </p>
               <div className="mt-6">
                 <a href="#booking" className="text-accent font-montserrat text-sm uppercase tracking-wider flex items-center hover:underline">
@@ -260,7 +260,7 @@ window.Calendly.initInlineWidget({
               <h3 className="text-xl font-playfair font-semibold text-charcoal mb-4">Seasonal Updates</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
               <p className="text-charcoal/70 font-montserrat">
-                Stay current with seasonal trends and learn how to incorporate them into your personal style. We'll help you adapt your wardrobe to each season while maintaining your unique aesthetic.
+                Stay current with seasonal trends and learn how to incorporate them into your personal style. We&apos;ll help you adapt your wardrobe to each season while maintaining your unique aesthetic.
               </p>
               <div className="mt-6">
                 <a href="#booking" className="text-accent font-montserrat text-sm uppercase tracking-wider flex items-center hover:underline">
@@ -448,7 +448,7 @@ window.Calendly.initInlineWidget({
               Schedule Your Consultation
             </p>
             <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto font-montserrat font-light leading-relaxed">
-              Choose a time that works for you and let's start your style journey.
+              Choose a time that works for you and let&apos;s start your style journey.
             </p>
           </div>
           
