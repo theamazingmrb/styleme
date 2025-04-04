@@ -6,7 +6,25 @@ import { FaShoppingBag, FaTshirt, FaCalendarAlt, FaCheck, FaTimes } from "react-
 
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly: {
+      initInlineWidget: (options: {
+        url: string;
+        parentElement: HTMLElement;
+        prefill: {
+          name: string;
+          email: string;
+          customAnswers: {
+            a1: string;
+          };
+        };
+        utm: Record<string, string>;
+        branding: {
+          color: string;
+          textColor: string;
+          primaryColor: string;
+        };
+      }) => void;
+    };
   }
 }
 
@@ -34,9 +52,11 @@ export default function Home() {
   }, []);
 
   // Initialize or update Calendly when selectedPackage changes
-  useEffect(() => {
-    if (showCalendly && selectedPackage && calendlyRef.current) {
-      // Clear any existing Calendly instance
+// Initialize or update Calendly when selectedPackage changes
+useEffect(() => {
+  if (showCalendly && selectedPackage) {
+    // Clear any existing Calendly instance
+    if (calendlyRef.current) {
       if (calendlyRef.current.innerHTML !== '') {
         calendlyRef.current.innerHTML = '';
       }
@@ -47,32 +67,32 @@ export default function Home() {
       
       // Wait for Calendly to be available
       const initializeCalendly = () => {
-        if (window.Calendly) {
+        if (window.Calendly && calendlyRef.current) {
           // Using the provided Calendly link for all packages
           // In a production environment, you might want different links for each package
-          window.Calendly.initInlineWidget({
-            url: 'https://calendly.com/billie-heidelberg-jr/30min',
-            parentElement: calendlyRef.current,
-            prefill: {
-              name: '',
-              email: '',
-              customAnswers: {
-                a1: `Package: ${selectedPackage}` // Pass the selected package as a custom field
-              }
-            },
-            utm: {},
-            // Modern styling options
-            branding: {
-              color: '#4f46e5', // Indigo color to match our theme
-              textColor: '#ffffff',
-              primaryColor: '#4f46e5'
-            }
-          });
+// Update the Calendly initialization
+window.Calendly.initInlineWidget({
+  url: 'https://calendly.com/billie-heidelberg-jr/30min',
+  parentElement: calendlyRef.current,
+  prefill: {
+    name: '',
+    email: '',
+    customAnswers: {
+      a1: `Package: ${selectedPackage}`
+    }
+  },
+  utm: {} as Record<string, string>, // Properly type the empty object
+  branding: {
+    color: '#4f46e5',
+    textColor: '#ffffff',
+    primaryColor: '#4f46e5'
+  }
+});
           
           // Add a small note about the selected package above the Calendly widget
           const packageNote = document.createElement('div');
           packageNote.className = 'mb-4 p-3 bg-indigo-50 text-indigo-700 rounded-md text-center package-note';
-          packageNote.innerHTML = `<strong>Selected Package:</strong> ${selectedPackage}`;
+          packageNote.innerHTML = `<strong>Selected Package:</strong> ${selectedPackage.replace(/'/g, '&apos;')}`;
           if (calendlyRef.current && calendlyRef.current.parentNode) {
             calendlyRef.current.parentNode.insertBefore(packageNote, calendlyRef.current);
           }
@@ -83,8 +103,8 @@ export default function Home() {
       
       initializeCalendly();
     }
-  }, [showCalendly, selectedPackage]);
-  
+  }
+}, [showCalendly, selectedPackage]);
   const handleBooking = (packageType: string) => {
     setSelectedPackage(packageType);
     setShowCalendly(true);
