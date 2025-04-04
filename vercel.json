@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "build": {
+    "command": "next build",
+    "development": {
+      "command": "next dev --turbopack"
+    }
+  },
+  "installCommand": "npm install",
+  "outputDirectory": "out"
+}
