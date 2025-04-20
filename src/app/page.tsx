@@ -31,8 +31,24 @@ declare global {
 export default function Home() {
   const [showCalendly, setShowCalendly] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("");
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
+  const [email, setEmail] = useState("");
   const calendlyRef = useRef<HTMLDivElement>(null);
   
+  // Show email popup after a short delay, but only if user hasn't submitted before
+  useEffect(() => {
+    // Check if user has already submitted email
+    const hasSubmitted = localStorage.getItem('emailSubmitted') === 'true';
+    
+    if (!hasSubmitted) {
+      const timer = setTimeout(() => {
+        setShowEmailPopup(true);
+      }, 3000); // Show popup after 3 seconds
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   // Initialize Calendly widget when component mounts
   useEffect(() => {
     // Add Calendly script to the page
@@ -114,31 +130,82 @@ window.Calendly.initInlineWidget({
     bookingSection?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the email to your backend or email service
+    console.log('Email submitted:', email);
+    setShowEmailPopup(false);
+    // You could store this in localStorage to prevent showing the popup again
+    localStorage.setItem('emailSubmitted', 'true');
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation - Fashion Style */}
-      <nav className="bg-cream sticky top-0 z-10 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-playfair font-bold text-charcoal italic">StyleConsult</h1>
-            </div>
-            <div className="hidden sm:flex sm:items-center space-x-10">
-              <a href="#services" className="text-charcoal hover:text-accent px-3 py-2 text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Services</a>
-              <a href="#packages" className="text-charcoal hover:text-accent px-3 py-2 text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Packages</a>
-              <a href="#booking" className="text-charcoal hover:text-accent px-3 py-2 text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Book Now</a>
-            </div>
-            <div className="flex items-center">
-              <a 
-                href="#booking" 
-                className="btn-fashion btn-fashion-primary uppercase tracking-widest text-sm"
-              >
-                Book Consultation
-              </a>
+      {/* Email Collection Popup */}
+      {showEmailPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative max-w-xl w-full bg-transparent overflow-hidden">
+            {/* Close button */}
+            <button 
+              onClick={() => setShowEmailPopup(false)}
+              className="absolute top-2 right-2 text-white hover:text-gray-200 z-10"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            {/* Background image with text overlay */}
+            <div className="relative">
+              {/* Background image - using the exact image from reference */}
+              <div className="absolute inset-0 bg-[#a08977]">
+                <img 
+                  src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" 
+                  alt="Clothes on a rack" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Content overlay */}
+              <div className="relative p-10 flex flex-col items-center text-white">
+                <h2 className="text-4xl font-playfair font-bold mb-4 text-center leading-tight">
+                  Want to Elevate Your<br />Outfits Effortlessly?
+                </h2>
+                
+                <p className="text-base mb-8 text-center max-w-md">
+                  Enter your email to receive my FREE guide with 3 golden rules—simple, timeless tricks French women swear by—to transform your everyday outfits with ease.
+                </p>
+                
+                <form onSubmit={handleEmailSubmit} className="w-full max-w-md space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-2 mb-4">
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      className="flex-grow px-4 py-2 bg-white text-gray-800 border-none focus:outline-none"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                    
+                    <button
+                      type="submit"
+                      className="px-6 py-2 bg-yellow-400 text-white font-bold hover:bg-yellow-500 transition-colors"
+                    >
+                      SUBMIT
+                    </button>
+                  </div>
+                  
+                  <div className="text-center text-sm">
+                    <p className="text-white text-xs">I respect your privacy.</p>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </nav>
+      )}
+
+
 
       {/* Hero Section - Fashion Style */}
       <div className="relative bg-cream fashion-section">
@@ -150,12 +217,12 @@ window.Calendly.initInlineWidget({
                 <div className="w-16 h-1 bg-accent"></div>
               </div>
               <h1 className="font-playfair">
-                <span className="block text-5xl md:text-6xl lg:text-7xl font-light text-charcoal leading-tight">Elevate Your</span>
-                <span className="block text-5xl md:text-6xl lg:text-7xl font-semibold text-accent leading-tight mt-2">Personal Style</span>
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-light text-charcoal leading-tight">Stylishly You!</span>
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-semibold text-accent leading-tight mt-2">Discover your perfect look.</span>
               </h1>
-              <p className="mt-6 text-lg text-charcoal font-montserrat font-light leading-relaxed">
+              {/* <p className="mt-6 text-lg text-charcoal font-montserrat font-light leading-relaxed">
                 Get personalized recommendations on apparel and clothing from our expert stylists. Discover your perfect look and where to find it.
-              </p>
+              </p> */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="#booking"
@@ -176,17 +243,14 @@ window.Calendly.initInlineWidget({
                 <div className="relative overflow-hidden">
                   <div className="absolute -inset-4 bg-accent/10 rounded-tr-3xl rounded-bl-3xl transform rotate-6"></div>
                   <div className="relative overflow-hidden border-8 border-white shadow-xl">
-                    <Image
-                      src="/hero-image.png"
-                      alt="Stylist consultation session"
-                      width={600}
-                      height={800}
-                      className="w-full h-full object-cover"
-                      priority
+                    <video
+                      src="/videos/video.mp4"
+                      controls
+                      autoPlay
+                      muted
+                      loop
+                      style={{ width: '100%', height: 'auto' }}
                     />
-                  </div>
-                  <div className="absolute -bottom-6 -right-6 bg-accent text-white p-4 font-playfair italic shadow-lg">
-                    <p className="text-sm">Personalized Style Journey</p>
                   </div>
                 </div>
               </div>
@@ -207,7 +271,7 @@ window.Calendly.initInlineWidget({
               Expert Style Guidance
             </p>
             <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto font-montserrat font-light leading-relaxed">
-              Our professional stylists provide personalized recommendations tailored to your preferences, body type, and lifestyle.
+              Stylishly You!
             </p>
           </div>
 
@@ -517,12 +581,12 @@ window.Calendly.initInlineWidget({
         </div>
       </section>
 
-      {/* Footer - Fashion Style */}
-      <footer className="bg-charcoal py-16">
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center md:text-left">
-              <h3 className="font-playfair text-2xl text-white mb-6">StyleConsult</h3>
+              <h3 className="font-playfair text-2xl text-white mb-6">SHONCI HEIDELBERG</h3>
+              <h3 className="font-playfair text-xl text-charcoal mb-2">SHONCI HEIDELBERG</h3>
               <p className="text-cream/80 font-montserrat font-light leading-relaxed">
                 Elevating your personal style through expert consultation and personalized recommendations.
               </p>
@@ -554,20 +618,13 @@ window.Calendly.initInlineWidget({
             
             <div className="text-center md:text-right">
               <h4 className="font-montserrat uppercase tracking-widest text-accent text-sm mb-6">Contact Us</h4>
-              <p className="text-cream/80 font-montserrat font-light">
-                style@styleconsult.com
-              </p>
-              <p className="text-cream/80 font-montserrat font-light mt-2">
-                (555) 123-4567
-              </p>
-              <p className="text-cream/80 font-montserrat font-light mt-6">
-                &copy; {new Date().getFullYear()} StyleConsult.<br/>
-                All rights reserved.
-              </p>
+              <div className="text-cream/80 font-montserrat text-sm mb-2">style@shonciheidelberg.com</div>
+              <div className="text-cream/80 font-montserrat text-sm mb-2">(555) 123-4567</div>
+              <div className="text-cream/60 font-montserrat text-xs mt-6">&copy; {new Date().getFullYear()} SHONCI HEIDELBERG.<br />All rights reserved.</div>
             </div>
           </div>
         </div>
-      </footer>
+
     </div>
   );
 }
