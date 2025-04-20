@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { FaShoppingBag, FaTshirt, FaCalendarAlt, FaCheck, FaTimes } from "react-icons/fa";
 
@@ -585,8 +584,8 @@ window.Calendly.initInlineWidget({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center md:text-left">
-              <h3 className="font-playfair text-2xl text-white mb-6">SHONCI HEIDELBERG</h3>
-              <h3 className="font-playfair text-xl text-charcoal mb-2">SHONCI HEIDELBERG</h3>
+              <h3 className="font-playfair text-2xl text-white mb-6"><span className="tsukimi">SHONCI HEIDELBERG</span></h3>
+              <h3 className="font-playfair text-xl text-charcoal mb-2"><span className="tsukimi">SHONCI HEIDELBERG</span></h3>
               <p className="text-cream/80 font-montserrat font-light leading-relaxed">
                 Elevating your personal style through expert consultation and personalized recommendations.
               </p>
@@ -620,7 +619,7 @@ window.Calendly.initInlineWidget({
               <h4 className="font-montserrat uppercase tracking-widest text-accent text-sm mb-6">Contact Us</h4>
               <div className="text-cream/80 font-montserrat text-sm mb-2">style@shonciheidelberg.com</div>
               <div className="text-cream/80 font-montserrat text-sm mb-2">(555) 123-4567</div>
-              <div className="text-cream/60 font-montserrat text-xs mt-6">&copy; {new Date().getFullYear()} SHONCI HEIDELBERG.<br />All rights reserved.</div>
+              <div className="text-cream/60 font-montserrat text-xs mt-6">&copy; {new Date().getFullYear()} <span className="tsukimi">SHONCI HEIDELBERG</span>.<br />All rights reserved.</div>
             </div>
           </div>
         </div>

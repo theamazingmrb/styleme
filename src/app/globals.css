@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('../fonts/tsukimi-rounded.css');
 @import "tailwindcss";
 
 :root {
@@ -7,6 +8,7 @@
 }
 
 body {
+  font-family: 'Geist', 'Montserrat', 'Helvetica Neue', Arial, 'Tsukimi Rounded', sans-serif;
   background: #ffffff;
   color: #171717;
   font-family: 'Montserrat', sans-serif;
@@ -23,7 +25,11 @@ body {
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Custom classes */
+/* Custom fonts */
+.tsukimi {
+  font-family: 'Tsukimi Rounded', Arial, sans-serif;
+}
+
 .font-playfair {
   font-family: 'Playfair Display', serif;
 }

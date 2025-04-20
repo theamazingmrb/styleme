@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -24,28 +25,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Navigation - Fashion Style */}
         <nav className="bg-cream sticky top-0 z-10 py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col">
               {/* Top row with name and title */}
               <div className="flex flex-col items-start mb-2">
-                <h1 className="text-3xl font-playfair font-bold text-charcoal">SHONCI HEIDELBERG</h1>
+                <h1 className="text-3xl text-charcoal tsukimi">SHONCI HEIDELBERG</h1>
                 <p className="text-sm font-montserrat text-charcoal/80">Stylist based in Los Angeles, CA</p>
               </div>
               {/* Bottom row with navigation links */}
               <div className="flex justify-between items-center border-t border-b border-charcoal/20 py-2">
                 <div className="flex items-center space-x-6">
-                  <a href="/#home" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Home</a>
-                  <a href="/#about" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">About</a>
-                  <a href="/#services" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Styling Services</a>
-                  <a href="/#packages" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Packages</a>
-                  <a href="/#booking" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Book Now</a>
-                  <a href="/faq" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">FAQs</a>
-                  <a href="/#contact" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Contact</a>
+                  <Link href="/">Home</Link>
+                  <a href="#about" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">About</a>
+                  <a href="#services" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Styling Services</a>
+                  <a href="#packages" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Packages</a>
+                  <a href="#booking" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Book Now</a>
+                  <Link href="/faq" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">FAQs</Link>
+                  <a href="#contact" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Contact</a>
                 </div>
                 {/* Instagram icon */}
                 <div className="flex items-center">
