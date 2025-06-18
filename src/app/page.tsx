@@ -30,23 +30,23 @@ declare global {
 export default function Home() {
   const [showCalendly, setShowCalendly] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("");
-  const [showEmailPopup, setShowEmailPopup] = useState(false);
+  // const [showEmailPopup, setShowEmailPopup] = useState(false);
   const [email, setEmail] = useState("");
   const calendlyRef = useRef<HTMLDivElement>(null);
   
-  // Show email popup after a short delay, but only if user hasn't submitted before
-  useEffect(() => {
-    // Check if user has already submitted email
-    const hasSubmitted = localStorage.getItem('emailSubmitted') === 'true';
+  // // Show email popup after a short delay, but only if user hasn't submitted before
+  // useEffect(() => {
+  //   // Check if user has already submitted email
+  //   const hasSubmitted = localStorage.getItem('emailSubmitted') === 'true';
     
-    if (!hasSubmitted) {
-      const timer = setTimeout(() => {
-        setShowEmailPopup(true);
-      }, 3000); // Show popup after 3 seconds
+  //   if (!hasSubmitted) {
+  //     const timer = setTimeout(() => {
+  //       setShowEmailPopup(true);
+  //     }, 3000); // Show popup after 3 seconds
       
-      return () => clearTimeout(timer);
-    }
-  }, []);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, []);
 
   // Initialize Calendly widget when component mounts
   useEffect(() => {
@@ -129,14 +129,14 @@ window.Calendly.initInlineWidget({
     bookingSection?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the email to your backend or email service
-    console.log('Email submitted:', email);
-    setShowEmailPopup(false);
-    // You could store this in localStorage to prevent showing the popup again
-    localStorage.setItem('emailSubmitted', 'true');
-  };
+  // const handleEmailSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the email to your backend or email service
+  //   console.log('Email submitted:', email);
+  //   setShowEmailPopup(false);
+  //   // You could store this in localStorage to prevent showing the popup again
+  //   localStorage.setItem('emailSubmitted', 'true');
+  // };
 
   return (
     <div className="min-h-screen bg-white">
@@ -146,7 +146,7 @@ window.Calendly.initInlineWidget({
           <div className="relative max-w-xl w-full bg-transparent overflow-hidden">
             {/* Close button */}
             <button 
-              onClick={() => setShowEmailPopup(false)}
+              // onClick={() => setShowEmailPopup(false)}
               className="absolute top-2 right-2 text-white hover:text-gray-200 z-10"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -586,7 +586,7 @@ window.Calendly.initInlineWidget({
               <h3 className="tsukimi text-2xl text-white mb-6"><span className="tsukimi">SHONCI HEIDELBERG</span></h3>
               <h3 className="tsukimi text-xl text-charcoal mb-2"><span className="tsukimi">SHONCI HEIDELBERG</span></h3>
               <p className="text-cream/80 tsukimi font-light leading-relaxed">
-                Elevating your personal style through expert consultation and personalized recommendations.
+                Style elevation through personalized recommendations.
               </p>
             </div>
             
