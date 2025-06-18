@@ -141,7 +141,7 @@ window.Calendly.initInlineWidget({
   return (
     <div className="min-h-screen bg-white">
       {/* Email Collection Popup */}
-      {showEmailPopup && (
+      {false && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative max-w-xl w-full bg-transparent overflow-hidden">
             {/* Close button */}
@@ -153,9 +153,7 @@ window.Calendly.initInlineWidget({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            {/* Background image with text overlay */}
-            <div className="relative">
+ <div className="relative">
               {/* Background image - using the exact image from reference */}
               <div className="absolute inset-0 bg-[#a08977]">
                 <img 
@@ -199,7 +197,9 @@ window.Calendly.initInlineWidget({
                   </div>
                 </form>
               </div>
-            </div>
+            </div>            
+            {/* Background image with text overlay */}
+           
           </div>
         </div>
       )}
@@ -207,8 +207,7 @@ window.Calendly.initInlineWidget({
 
 
       {/* Hero Section - Fashion Style */}
-      <div className="relative bg-cream fashion-section">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-beige hidden lg:block"></div>
+      <div className="relative bg-white fashion-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
             <div className="sm:text-center lg:col-span-6 lg:text-left animate-fadeIn">
@@ -277,7 +276,7 @@ window.Calendly.initInlineWidget({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Service 1 */}
             <div className="fashion-card p-8 hover-lift animate-fadeIn delay-100">
-              <div className="mb-6 w-16 h-16 flex items-center justify-center bg-cream rounded-full">
+              <div className="mb-6 w-16 h-16 flex items-center justify-center bg-white border border-accent/20 rounded-full">
                 <FaShoppingBag className="h-8 w-8 text-accent" />
               </div>
               <h3 className="text-xl font-playfair font-semibold text-charcoal mb-4">Shopping Assistance</h3>
@@ -297,7 +296,7 @@ window.Calendly.initInlineWidget({
 
             {/* Service 2 */}
             <div className="fashion-card p-8 hover-lift animate-fadeIn delay-200">
-              <div className="mb-6 w-16 h-16 flex items-center justify-center bg-cream rounded-full">
+              <div className="mb-6 w-16 h-16 flex items-center justify-center bg-white border border-accent/20 rounded-full">
                 <FaTshirt className="h-8 w-8 text-accent" />
               </div>
               <h3 className="text-xl font-playfair font-semibold text-charcoal mb-4">Wardrobe Analysis</h3>
@@ -317,7 +316,7 @@ window.Calendly.initInlineWidget({
 
             {/* Service 3 */}
             <div className="fashion-card p-8 hover-lift animate-fadeIn delay-300">
-              <div className="mb-6 w-16 h-16 flex items-center justify-center bg-cream rounded-full">
+              <div className="mb-6 w-16 h-16 flex items-center justify-center bg-white border border-accent/20 rounded-full">
                 <FaCalendarAlt className="h-8 w-8 text-accent" />
               </div>
               <h3 className="text-xl font-playfair font-semibold text-charcoal mb-4">Seasonal Updates</h3>
@@ -339,7 +338,7 @@ window.Calendly.initInlineWidget({
       </section>
 
       {/* Packages Section - Fashion Style */}
-      <section id="packages" className="fashion-section bg-cream">
+      <section id="packages" className="fashion-section bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fadeIn">
             <div className="inline-block">
@@ -356,7 +355,7 @@ window.Calendly.initInlineWidget({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Basic Package */}
-            <div className="bg-white border border-beige hover:border-accent transition-all duration-300 flex flex-col animate-fadeIn delay-100">
+            <div className="bg-white border border-gray-200 hover:border-accent transition-all duration-300 flex flex-col animate-fadeIn delay-100">
               <div className="bg-beige/30 p-6 text-center">
                 <h3 className="font-playfair text-2xl text-charcoal">Basic Consultation</h3>
                 <div className="mt-4 flex items-baseline justify-center">
