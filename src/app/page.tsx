@@ -30,21 +30,7 @@ declare global {
 export default function Home() {
   const [showCalendly, setShowCalendly] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("");
-  const [showEmailPopup, setShowEmailPopup] = useState(false); // Always false to disable popup
-  const [email, setEmail] = useState("");
   const calendlyRef = useRef<HTMLDivElement>(null);
-  
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Store that user has submitted email
-    localStorage.setItem('emailSubmitted', 'true');
-    // Close the popup
-    setShowEmailPopup(false);
-    // Optional: Add email to your mailing list or send to your backend
-    console.log('Email submitted:', email);
-    // Reset email field
-    setEmail('');
-  };
   
   // // Show email popup after a short delay, but only if user hasn't submitted before
   // useEffect(() => {
@@ -177,37 +163,17 @@ window.Calendly.initInlineWidget({
               
               {/* Content overlay */}
               <div className="relative p-10 flex flex-col items-center text-white">
-                <h2 className="text-4xl tsukimi font-bold mb-4 text-center leading-tight">
+                <h2 className="text-4xl font-montserrat font-bold mb-4 text-center leading-tight">
                   Want to Elevate Your<br />Outfits Effortlessly?
                 </h2>
                 
                 <p className="text-base mb-8 text-center max-w-md">
-                  Enter your email to receive my FREE guide with 3 golden rules—simple, timeless tricks French women swear by—to transform your everyday outfits with ease.
+                  Get my FREE guide with 3 golden rules—simple, timeless tricks French women swear by—to transform your everyday outfits with ease.
                 </p>
                 
-                <form onSubmit={handleEmailSubmit} className="w-full max-w-md space-y-4">
-                  <div className="flex flex-col sm:flex-row gap-2 mb-4">
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      className="flex-grow px-4 py-2 bg-white text-gray-800 border-none focus:outline-none"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                    
-                    <button
-                      type="submit"
-                      className="px-6 py-2 bg-yellow-400 text-white font-bold hover:bg-yellow-500 transition-colors"
-                    >
-                      SUBMIT
-                    </button>
-                  </div>
-                  
-                  <div className="text-center text-sm">
-                    <p className="text-white text-xs">I respect your privacy.</p>
-                  </div>
-                </form>
+                <a href="#booking" className="px-6 py-3 bg-yellow-400 text-white font-montserrat font-bold hover:bg-yellow-500 transition-colors">
+                  BOOK A CONSULTATION
+                </a>
               </div>
             </div>            
             {/* Background image with text overlay */}
@@ -226,14 +192,14 @@ window.Calendly.initInlineWidget({
               <div className="mb-4 inline-block">
                 <div className="w-16 h-1 bg-accent"></div>
               </div>
-              <h1 className="tsukimi">
+              <h1 className="font-montserrat">
                 <span className="block text-5xl md:text-6xl lg:text-7xl font-light text-charcoal leading-tight">Stylishly You!</span>
                 <span className="block text-5xl md:text-6xl lg:text-7xl font-semibold text-accent leading-tight mt-2">Discover your perfect look.</span>
               </h1>
-              {/* <p className="mt-6 text-lg text-charcoal tsukimi font-light leading-relaxed">
+              {/* <p className="mt-6 text-lg text-charcoal font-montserrat font-light leading-relaxed">
                 Get personalized recommendations on apparel and clothing from our expert stylists. Discover your perfect look and where to find it.
               </p> */}
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              {/* <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="#booking"
                   className="btn-fashion btn-fashion-primary uppercase tracking-widest text-sm"
@@ -246,7 +212,7 @@ window.Calendly.initInlineWidget({
                 >
                   Explore Services
                 </a>
-              </div>
+              </div> */}
             </div>
             <div className="mt-12 lg:mt-0 lg:col-span-6 animate-fadeIn delay-200">
               <div className="relative mx-auto">
@@ -276,11 +242,11 @@ window.Calendly.initInlineWidget({
             <div className="inline-block">
               <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
             </div>
-            <h2 className="tsukimi text-4xl md:text-5xl text-charcoal mb-3">Our Services</h2>
-            <p className="text-2xl font-light text-accent tsukimi italic">
+            <h2 className="font-montserrat text-4xl md:text-5xl text-charcoal mb-3">Our Services</h2>
+            <p className="text-2xl font-light text-accent font-montserrat italic">
               Expert Style Guidance
             </p>
-            <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto tsukimi font-light leading-relaxed">
+            <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto font-montserrat font-light leading-relaxed">
               Stylishly You!
             </p>
           </div>
@@ -291,13 +257,13 @@ window.Calendly.initInlineWidget({
               <div className="mb-6 w-16 h-16 flex items-center justify-center bg-white border border-accent/20 rounded-full">
                 <FaShoppingBag className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl tsukimi font-semibold text-charcoal mb-4">Shopping Assistance</h3>
+              <h3 className="text-xl font-montserrat font-semibold text-charcoal mb-4">Shopping Assistance</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
-              <p className="text-charcoal/70 tsukimi">
+              <p className="text-charcoal/70 font-montserrat">
                 Get recommendations on where to shop for your specific style needs and budget constraints. Our stylists know the best places to find quality pieces that match your aesthetic.
               </p>
               <div className="mt-6">
-                <a href="#booking" className="text-accent tsukimi text-sm uppercase tracking-wider flex items-center hover:underline">
+                <a href="#booking" className="text-accent font-montserrat text-sm uppercase tracking-wider flex items-center hover:underline">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -311,13 +277,13 @@ window.Calendly.initInlineWidget({
               <div className="mb-6 w-16 h-16 flex items-center justify-center bg-white border border-accent/20 rounded-full">
                 <FaTshirt className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl tsukimi font-semibold text-charcoal mb-4">Wardrobe Analysis</h3>
+              <h3 className="text-xl font-montserrat font-semibold text-charcoal mb-4">Wardrobe Analysis</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
-              <p className="text-charcoal/70 tsukimi">
+              <p className="text-charcoal/70 font-montserrat">
                 We&apos;ll help you assess your current wardrobe and identify key pieces to add for maximum versatility. Transform your closet into a curated collection that truly represents your style.
               </p>
               <div className="mt-6">
-                <a href="#booking" className="text-accent tsukimi text-sm uppercase tracking-wider flex items-center hover:underline">
+                <a href="#booking" className="text-accent font-montserrat text-sm uppercase tracking-wider flex items-center hover:underline">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -331,13 +297,13 @@ window.Calendly.initInlineWidget({
               <div className="mb-6 w-16 h-16 flex items-center justify-center bg-white border border-accent/20 rounded-full">
                 <FaCalendarAlt className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl tsukimi font-semibold text-charcoal mb-4">Seasonal Updates</h3>
+              <h3 className="text-xl font-montserrat font-semibold text-charcoal mb-4">Seasonal Updates</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
-              <p className="text-charcoal/70 tsukimi">
+              <p className="text-charcoal/70 font-montserrat">
                 Stay current with seasonal trends and learn how to incorporate them into your personal style. We&apos;ll help you adapt your wardrobe to each season while maintaining your unique aesthetic.
               </p>
               <div className="mt-6">
-                <a href="#booking" className="text-accent tsukimi text-sm uppercase tracking-wider flex items-center hover:underline">
+                <a href="#booking" className="text-accent font-montserrat text-sm uppercase tracking-wider flex items-center hover:underline">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -356,11 +322,11 @@ window.Calendly.initInlineWidget({
             <div className="inline-block">
               <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
             </div>
-            <h2 className="tsukimi text-4xl md:text-5xl text-charcoal mb-3">Style Packages</h2>
-            <p className="text-2xl font-light text-accent tsukimi italic">
+            <h2 className="font-montserrat text-4xl md:text-5xl text-charcoal mb-3">Style Packages</h2>
+            <p className="text-2xl font-light text-accent font-montserrat italic">
               Choose Your Style Journey
             </p>
-            <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto tsukimi font-light leading-relaxed">
+            <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto font-montserrat font-light leading-relaxed">
               Select the package that best fits your style needs and budget.
             </p>
           </div>
@@ -369,30 +335,30 @@ window.Calendly.initInlineWidget({
             {/* Basic Package */}
             <div className="bg-white border border-gray-200 hover:border-accent transition-all duration-300 flex flex-col animate-fadeIn delay-100">
               <div className="bg-beige/30 p-6 text-center">
-                <h3 className="tsukimi text-2xl text-charcoal">Basic Consultation</h3>
+                <h3 className="font-montserrat text-2xl text-charcoal">Basic Consultation</h3>
                 <div className="mt-4 flex items-baseline justify-center">
-                  <span className="text-5xl tsukimi font-light text-accent">$99</span>
-                  <span className="ml-1 text-lg tsukimi text-charcoal/70">/session</span>
+                  <span className="text-5xl font-montserrat font-light text-accent">$99</span>
+                  <span className="ml-1 text-lg font-montserrat text-charcoal/70">/session</span>
                 </div>
               </div>
               
               <div className="flex-1 p-8">
-                <p className="text-center tsukimi text-charcoal/80 mb-8 italic">
+                <p className="text-center font-montserrat text-charcoal/80 mb-8 italic">
                   Perfect for those looking for quick style advice.
                 </p>
 
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">60-minute virtual consultation</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">60-minute virtual consultation</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">Basic style assessment</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">Basic style assessment</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">3 outfit recommendations</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">3 outfit recommendations</span>
                   </li>
                 </ul>
               </div>
@@ -410,40 +376,40 @@ window.Calendly.initInlineWidget({
             {/* Premium Package */}
             <div className="bg-white border-2 border-accent shadow-xl flex flex-col relative animate-fadeIn delay-200 transform -translate-y-4">
               <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                <div className="bg-accent text-white text-xs uppercase tracking-widest py-1 px-4 tsukimi">
+                <div className="bg-accent text-white text-xs uppercase tracking-widest py-1 px-4 font-montserrat">
                   Most Popular
                 </div>
               </div>
               
               <div className="bg-accent/10 p-6 text-center">
-                <h3 className="tsukimi text-2xl text-charcoal">Premium Consultation</h3>
+                <h3 className="font-montserrat text-2xl text-charcoal">Premium Consultation</h3>
                 <div className="mt-4 flex items-baseline justify-center">
-                  <span className="text-5xl tsukimi font-light text-accent">$199</span>
-                  <span className="ml-1 text-lg tsukimi text-charcoal/70">/session</span>
+                  <span className="text-5xl font-montserrat font-light text-accent">$199</span>
+                  <span className="ml-1 text-lg font-montserrat text-charcoal/70">/session</span>
                 </div>
               </div>
               
               <div className="flex-1 p-8">
-                <p className="text-center tsukimi text-charcoal/80 mb-8 italic">
+                <p className="text-center font-montserrat text-charcoal/80 mb-8 italic">
                   Our most popular package for comprehensive style advice.
                 </p>
 
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">90-minute consultation (virtual or in-person)</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">90-minute consultation (virtual or in-person)</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">Detailed style profile</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">Detailed style profile</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">5 outfit recommendations</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">5 outfit recommendations</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">Shopping guide with store recommendations</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">Shopping guide with store recommendations</span>
                   </li>
                 </ul>
               </div>
@@ -461,38 +427,38 @@ window.Calendly.initInlineWidget({
             {/* VIP Package */}
             <div className="bg-white border border-beige hover:border-accent transition-all duration-300 flex flex-col animate-fadeIn delay-300">
               <div className="bg-beige/30 p-6 text-center">
-                <h3 className="tsukimi text-2xl text-charcoal">VIP Style Experience</h3>
+                <h3 className="font-montserrat text-2xl text-charcoal">VIP Style Experience</h3>
                 <div className="mt-4 flex items-baseline justify-center">
-                  <span className="text-5xl tsukimi font-light text-accent">$399</span>
-                  <span className="ml-1 text-lg tsukimi text-charcoal/70">/session</span>
+                  <span className="text-5xl font-montserrat font-light text-accent">$399</span>
+                  <span className="ml-1 text-lg font-montserrat text-charcoal/70">/session</span>
                 </div>
               </div>
               
               <div className="flex-1 p-8">
-                <p className="text-center tsukimi text-charcoal/80 mb-8 italic">
+                <p className="text-center font-montserrat text-charcoal/80 mb-8 italic">
                   The ultimate style transformation experience.
                 </p>
 
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">3-hour in-person consultation</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">3-hour in-person consultation</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">Complete wardrobe analysis</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">Complete wardrobe analysis</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">10 outfit recommendations</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">10 outfit recommendations</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">Personal shopping assistant (2 hours)</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">Personal shopping assistant (2 hours)</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 tsukimi">30-day follow-up support</span>
+                    <span className="ml-3 text-charcoal/70 font-montserrat">30-day follow-up support</span>
                   </li>
                 </ul>
               </div>
@@ -517,18 +483,18 @@ window.Calendly.initInlineWidget({
             <div className="inline-block">
               <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
             </div>
-            <h2 className="tsukimi text-4xl md:text-5xl text-charcoal mb-3">Book Your Session</h2>
-            <p className="text-2xl font-light text-accent tsukimi italic">
+            <h2 className="font-montserrat text-4xl md:text-5xl text-charcoal mb-3">Book Your Session</h2>
+            <p className="text-2xl font-light text-accent font-montserrat italic">
               Schedule Your Consultation
             </p>
-            <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto tsukimi font-light leading-relaxed">
+            <p className="mt-6 max-w-2xl text-lg text-charcoal/80 mx-auto font-montserrat font-light leading-relaxed">
               Choose a time that works for you and let&apos;s start your style journey.
             </p>
           </div>
           
           {!showCalendly ? (
             <div className="text-center py-10 animate-fadeIn">
-              <p className="text-xl tsukimi text-charcoal/80 mb-10 italic">Select a package to schedule your consultation</p>
+              <p className="text-xl font-montserrat text-charcoal/80 mb-10 italic">Select a package to schedule your consultation</p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
                 <button 
                   onClick={() => handleBooking("Basic Consultation")}
@@ -553,7 +519,7 @@ window.Calendly.initInlineWidget({
           ) : (
             <div className="relative animate-fadeIn bg-cream/50 p-8 border border-beige">
               <div className="mb-8 flex items-center justify-between">
-                <h3 className="tsukimi text-2xl text-accent">
+                <h3 className="font-montserrat text-2xl text-accent">
                   {selectedPackage}
                 </h3>
                 <button 
@@ -569,7 +535,7 @@ window.Calendly.initInlineWidget({
                       calendlyRef.current.innerHTML = '';
                     }
                   }}
-                  className="text-accent hover:text-charcoal flex items-center transition-colors duration-300 tsukimi text-sm uppercase tracking-wider"
+                  className="text-accent hover:text-charcoal flex items-center transition-colors duration-300 font-montserrat text-sm uppercase tracking-wider"
                   aria-label="Close booking panel"
                 >
                   <FaTimes className="h-4 w-4 mr-2" />
@@ -595,15 +561,15 @@ window.Calendly.initInlineWidget({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center md:text-left">
-              <h3 className="tsukimi text-2xl text-white mb-6"><span className="tsukimi">SHONCI HEIDELBERG</span></h3>
-              <h3 className="tsukimi text-xl text-charcoal mb-2"><span className="tsukimi">SHONCI HEIDELBERG</span></h3>
-              <p className="text-cream/80 tsukimi font-light leading-relaxed">
+              <h3 className="font-montserrat text-2xl text-white mb-6"><span className="font-montserrat">SHONCI HEIDELBERG</span></h3>
+              <h3 className="font-montserrat text-xl text-charcoal mb-2"><span className="font-montserrat">SHONCI HEIDELBERG</span></h3>
+              <p className="text-cream/80 font-montserrat font-light leading-relaxed">
                 Style elevation through personalized recommendations.
               </p>
             </div>
             
             <div className="text-center">
-              <h4 className="tsukimi uppercase tracking-widest text-accent text-sm mb-6">Connect With Us</h4>
+              <h4 className="font-montserrat uppercase tracking-widest text-accent text-sm mb-6">Connect With Us</h4>
               <div className="flex justify-center space-x-6">
                 <a href="#" className="text-cream hover:text-accent transition-colors duration-300">
                   <span className="sr-only">Instagram</span>
@@ -627,10 +593,10 @@ window.Calendly.initInlineWidget({
             </div>
             
             <div className="text-center md:text-right">
-              <h4 className="tsukimi uppercase tracking-widest text-accent text-sm mb-6">Contact Us</h4>
-              <div className="text-cream/80 tsukimi text-sm mb-2">style@shonciheidelberg.com</div>
-              <div className="text-cream/80 tsukimi text-sm mb-2">(555) 123-4567</div>
-              <div className="text-cream/60 tsukimi text-xs mt-6">&copy; {new Date().getFullYear()} <span className="tsukimi">SHONCI HEIDELBERG</span>.<br />All rights reserved.</div>
+              <h4 className="font-montserrat uppercase tracking-widest text-accent text-sm mb-6">Contact Us</h4>
+              <div className="text-cream/80 font-montserrat text-sm mb-2">style@shonci.com</div>
+              <div className="text-cream/80 font-montserrat text-sm mb-2">(555) 123-4567</div>
+              <div className="text-cream/60 font-montserrat text-xs mt-6">&copy; {new Date().getFullYear()} <span className="font-montserrat">SHONCI HEIDELBERG</span>.<br />All rights reserved.</div>
             </div>
           </div>
         </div>

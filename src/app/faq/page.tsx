@@ -39,12 +39,12 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-white py-16 px-4">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl tsukimi text-center text-[#9b8579] mb-8">Frequently Asked Questions</h1>
+        <h1 className="text-4xl font-serif text-center text-[#9b8579] mb-8">Frequently Asked Questions</h1>
         <div className="space-y-6">
           {faqs.map((faq, idx) => (
             <div key={idx} className="bg-white rounded-lg shadow p-6 border border-[#e6e0d4]">
-              <h2 className="text-xl tsukimi font-semibold text-[#b8a99a] mb-2">{faq.question}</h2>
-              <p className="text-[#333] text-base leading-relaxed tsukimi">{faq.answer}</p>
+              <h2 className="text-xl font-serif font-semibold text-[#b8a99a] mb-2">{faq.question}</h2>
+              <p className="text-[#333] text-base leading-relaxed font-serif">{faq.answer}</p>
             </div>
           ))}
         </div>
