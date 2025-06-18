@@ -30,9 +30,21 @@ declare global {
 export default function Home() {
   const [showCalendly, setShowCalendly] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("");
-  // const [showEmailPopup, setShowEmailPopup] = useState(false);
+  const [showEmailPopup, setShowEmailPopup] = useState(false); // Always false to disable popup
   const [email, setEmail] = useState("");
   const calendlyRef = useRef<HTMLDivElement>(null);
+  
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Store that user has submitted email
+    localStorage.setItem('emailSubmitted', 'true');
+    // Close the popup
+    setShowEmailPopup(false);
+    // Optional: Add email to your mailing list or send to your backend
+    console.log('Email submitted:', email);
+    // Reset email field
+    setEmail('');
+  };
   
   // // Show email popup after a short delay, but only if user hasn't submitted before
   // useEffect(() => {
