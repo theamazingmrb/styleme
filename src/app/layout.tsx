@@ -64,17 +64,17 @@ export default function RootLayout({
                   
                   <Link href="/" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Home</Link>
                   
-                  <a href="#about" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">About</a>
+                  <Link href="/#about" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">About</Link>
                   
-                  <a href="#services" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Styling Services</a>
+                  <Link href="/#services" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Styling Services</Link>
                   
-                  <a href="#packages" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Packages</a>
+                  <Link href="/#packages" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Packages</Link>
                   
-                  <a href="#booking" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Book Now</a>
+                  <Link href="/#booking" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Book Now</Link>
                   
                   <Link href="/faq" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">FAQs</Link>
                   
-                  <a href="#contact" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Contact</a>
+                  <Link href="/#contact" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Contact</Link>
                 </div>
               </div>
               
@@ -89,34 +89,34 @@ export default function RootLayout({
                     >
                       Home
                     </Link>
-                    <a 
-                      href="#about" 
+                    <Link 
+                      href="/#about" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       About
-                    </a>
-                    <a 
-                      href="#services" 
+                    </Link>
+                    <Link 
+                      href="/#services" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Styling Services
-                    </a>
-                    <a 
-                      href="#packages" 
+                    </Link>
+                    <Link 
+                      href="/#packages" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Packages
-                    </a>
-                    <a 
-                      href="#booking" 
+                    </Link>
+                    <Link 
+                      href="/#booking" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Book Now
-                    </a>
+                    </Link>
                     <Link 
                       href="/faq" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
@@ -124,13 +124,13 @@ export default function RootLayout({
                     >
                       FAQs
                     </Link>
-                    <a 
-                      href="#contact" 
+                    <Link 
+                      href="/#contact" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Contact
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
