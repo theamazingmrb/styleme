@@ -37,7 +37,7 @@ export default function RootLayout({
               <div className="flex justify-between items-center mb-2">
                 <div>
                   <h1 className="text-2xl md:text-3xl text-charcoal tsukimi">SHONCI HEIDELBERG</h1>
-                  <p className="text-xs md:text-sm font-montserrat text-charcoal/80">Stylist based in Los Angeles, CA</p>
+                  <p className="text-xs md:text-sm tsukimi text-charcoal/80">Stylist based in Los Angeles, CA</p>
                 </div>
                 
                 {/* Mobile menu button */}
@@ -61,13 +61,13 @@ export default function RootLayout({
               {/* Bottom row with navigation links - Desktop */}
               <div className="hidden md:flex justify-between items-center border-t border-b border-charcoal/20 py-2">
                 <div className="flex items-center space-x-6">
-                  <Link href="/" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Home</Link>
-                  <a href="#about" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">About</a>
-                  <a href="#services" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Styling Services</a>
-                  <a href="#packages" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Packages</a>
-                  <a href="#booking" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Book Now</a>
-                  <Link href="/faq" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">FAQs</Link>
-                  <a href="#contact" className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300">Contact</a>
+                  <Link href="/" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">Home</Link>
+                  <a href="#about" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">About</a>
+                  <a href="#services" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">Styling Services</a>
+                  <a href="#packages" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">Packages</a>
+                  <a href="#booking" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">Book Now</a>
+                  <Link href="/faq" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">FAQs</Link>
+                  <a href="#contact" className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300">Contact</a>
                 </div>
                 {/* Instagram icon */}
                 <div className="flex items-center">
@@ -85,49 +85,49 @@ export default function RootLayout({
                   <div className="flex flex-col space-y-4">
                     <Link 
                       href="/" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Home
                     </Link>
                     <a 
                       href="#about" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       About
                     </a>
                     <a 
                       href="#services" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Styling Services
                     </a>
                     <a 
                       href="#packages" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Packages
                     </a>
                     <a 
                       href="#booking" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Book Now
                     </a>
                     <Link 
                       href="/faq" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       FAQs
                     </Link>
                     <a 
                       href="#contact" 
-                      className="text-charcoal hover:text-accent text-sm font-montserrat uppercase tracking-widest transition-colors duration-300"
+                      className="text-charcoal hover:text-accent text-sm tsukimi uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Contact

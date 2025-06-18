@@ -8,10 +8,9 @@
 }
 
 body {
-  font-family: 'Geist', 'Montserrat', 'Helvetica Neue', Arial, 'Tsukimi Rounded', sans-serif;
+  font-family: 'Tsukimi Rounded', 'Geist', 'Helvetica Neue', Arial, sans-serif;
   background: #ffffff;
   color: #171717;
-  font-family: 'Montserrat', sans-serif;
 }
 
 /* Custom animations */
