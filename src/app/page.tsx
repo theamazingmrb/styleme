@@ -189,9 +189,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
             <div className="sm:text-center lg:col-span-6 lg:text-left animate-fadeIn">
-              <h1 className="font-lato">
-                <span className="text-center block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-charcoal leading-tight">Curated Luxury.</span>
-                <span className="text-center block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-charcoal leading-tight">Discover your Perfect Look.</span>
+              <h1 className="font-lato md:hidden">
+                <span className="text-center font-bold block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal leading-tight">Curated Luxury.</span>
+                <span className="text-center font-bold block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal leading-tight">Discover your Perfect Look.</span>
+              </h1>
+              <h1 className="font-lato hidden md:block">
+                <span className="text-center font-bold block text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-charcoal leading-tight whitespace-nowrap overflow-visible">Curated Luxury. Discover your Perfect Look.</span>
               </h1>
               {/* <p className="mt-6 text-lg text-charcoal font-lato font-light leading-relaxed">
                 Get personalized recommendations on apparel and clothing from our expert stylists. Discover your perfect look and where to find it.
@@ -240,8 +243,8 @@ export default function Home() {
             <div className="inline-block">
               <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
             </div>
-            <h2 className="font-lato text-3xl md:text-5xl text-charcoal mb-3">Our Services</h2>
-            <p className="text-2xl font-light text-accent font-lato italic">
+            <h2 className="font-lato text-xl md:text-2xl lg:text-3xl text-charcoal mb-3">Our Services</h2>
+            <p className="text-xl font-light text-accent font-lato italic">
               Expert Style Guidance
             </p>
           </div>
