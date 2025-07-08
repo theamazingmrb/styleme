@@ -4,7 +4,7 @@ import React from "react";
 
 const faqs = [
   {
-    question: "How do I book a personal styling session?",
+    question: "?",
     answer:
       "You can book a session directly through our website by selecting your preferred package and date. Once booked, you'll receive a confirmation email with all the details.",
   },
@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Can I get a customized package?",
     answer:
-      "Absolutely. If our standard packages don't quite fit your needs, please contact us and we'll create a custom package just for you.",
+      "Absolutely. If our standard packages don't quite fit your needs, please contact me and we'll create a custom package just for you.",
   },
   {
     question: "What is your cancellation policy?",

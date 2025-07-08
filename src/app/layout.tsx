@@ -70,11 +70,13 @@ export default function RootLayout({
                   
                   <Link href="/#packages" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Packages</Link>
                   
+                  <Link href="/shop" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Shop</Link>
+                  
                   <Link href="/#booking" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Book Now</Link>
                   
                   <Link href="/faq" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">FAQs</Link>
                   
-                  <Link href="/#contact" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Contact</Link>
+                  <Link href="/contact" className="text-charcoal hover:text-accent text-sm font-lato tracking-widest transition-colors duration-300">Contact</Link>
                 </div>
               </div>
               
@@ -111,6 +113,13 @@ export default function RootLayout({
                       Packages
                     </Link>
                     <Link 
+                      href="/shop" 
+                      className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Shop
+                    </Link>
+                    <Link 
                       href="/#booking" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
@@ -125,7 +134,7 @@ export default function RootLayout({
                       FAQs
                     </Link>
                     <Link 
-                      href="/#contact" 
+                      href="/contact" 
                       className="text-charcoal hover:text-accent text-sm font-lato uppercase tracking-widest transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >

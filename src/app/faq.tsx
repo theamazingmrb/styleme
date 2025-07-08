@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "How do I book a personal styling session?",
     answer:
-      "You can book a session directly through our website by selecting your preferred package and date. Once booked, you'll receive a confirmation email with all the details.",
+      "You can book your session directly thru the website by selecting your preferred package and date.",
   },
   {
     question: "Are virtual styling sessions available?",

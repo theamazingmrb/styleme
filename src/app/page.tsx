@@ -190,11 +190,11 @@ export default function Home() {
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
             <div className="sm:text-center lg:col-span-6 lg:text-left animate-fadeIn">
               <h1 className="font-lato md:hidden">
-                <span className="text-center font-bold block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal leading-tight">Curated Luxury.</span>
-                <span className="text-center font-bold block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal leading-tight">Discover your Perfect Look.</span>
+                <span className="text-center font-bold block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal leading-tight">Curated Luxury</span>
+                <span className="text-center font-bold block text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal leading-tight">Discover your Perfect Look</span>
               </h1>
               <h1 className="font-lato hidden md:block">
-                <span className="text-center font-bold block text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-charcoal leading-tight whitespace-nowrap overflow-visible">Curated Luxury. Discover your Perfect Look.</span>
+                <span className="text-center font-bold block text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-charcoal leading-tight whitespace-nowrap overflow-visible">Curated Luxury Discover your Perfect Look</span>
               </h1>
               {/* <p className="mt-6 text-lg text-charcoal font-lato font-light leading-relaxed">
                 Get personalized recommendations on apparel and clothing from our expert stylists. Discover your perfect look and where to find it.
@@ -243,7 +243,7 @@ export default function Home() {
             <div className="inline-block">
               <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
             </div>
-            <h2 className="font-lato text-xl md:text-2xl lg:text-3xl text-charcoal mb-3">Our Services</h2>
+            <h2 className="font-lato text-xl md:text-2xl lg:text-3xl text-charcoal">Services</h2>
             <p className="text-xl font-light text-accent font-lato italic">
               Expert Style Guidance
             </p>
@@ -258,7 +258,7 @@ export default function Home() {
               <h3 className="text-xl font-lato font-semibold text-charcoal mb-4">Shopping Assistance</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
               <p className="text-charcoal/70 font-lato">
-                Get recommendations on where to shop for your specific style needs and budget constraints. Our stylists know the best places to find quality pieces that match your aesthetic.
+                Get recommendations on where to shop for quality peices that match your aesthetic and style needs
               </p>
               <div className="mt-6">
                 <a href="#booking" className="text-accent font-lato text-sm uppercase tracking-wider flex items-center hover:underline">
@@ -278,7 +278,7 @@ export default function Home() {
               <h3 className="text-xl font-lato font-semibold text-charcoal mb-4">Wardrobe Analysis</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
               <p className="text-charcoal/70 font-lato">
-                We&apos;ll help you assess your current wardrobe and identify key pieces to add for maximum versatility. Transform your closet into a curated collection that truly represents your style.
+                Assessment of your current wardrobe and identification of key pieces to add for maximum versatility that will transform your closet into a curated collection that truly represent your style
               </p>
               <div className="mt-6">
                 <a href="#booking" className="text-accent font-lato text-sm uppercase tracking-wider flex items-center hover:underline">
@@ -298,7 +298,7 @@ export default function Home() {
               <h3 className="text-xl font-lato font-semibold text-charcoal mb-4">Seasonal Updates</h3>
               <div className="w-10 h-0.5 bg-accent mb-4"></div>
               <p className="text-charcoal/70 font-lato">
-                Stay current with seasonal trends and learn how to incorporate them into your personal style. We&apos;ll help you adapt your wardrobe to each season while maintaining your unique aesthetic.
+              Stay current with season trends and learn how to incorporate them into your personal style while maintaining your unique aesthetic
               </p>
               <div className="mt-6">
                 <a href="#booking" className="text-accent font-lato text-sm uppercase tracking-wider flex items-center hover:underline">
@@ -440,7 +440,7 @@ export default function Home() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
-                    <span className="ml-3 text-charcoal/70 font-lato">3-hour in-person consultation</span>
+                    <span className="ml-3 text-charcoal/70 font-lato"> 3-hour consultation (virtual or in-person) </span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="flex-shrink-0 w-5 h-5 text-accent mt-0.5" />
@@ -585,7 +585,7 @@ export default function Home() {
           </div>
 
           <div className="text-center md:text-right">
-            <h4 className="font-lato uppercase tracking-widest text-accent text-sm mb-6">Contact Us</h4>
+            <h4 className="font-lato uppercase tracking-widest text-accent text-sm mb-6">Contact</h4>
             <div className="text-cream/80 font-lato text-sm mb-2">style@shonci.com</div>
             <div className="text-cream/80 font-lato text-sm mb-2">(555) 123-4567</div>
             <div className="text-cream/60 font-lato text-xs mt-6">&copy; {new Date().getFullYear()} <span className="font-montserrat">SHONCI</span>.<br />All rights reserved.</div>
