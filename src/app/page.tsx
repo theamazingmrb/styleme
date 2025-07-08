@@ -567,7 +567,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <h4 className="font-lato uppercase tracking-widest text-accent text-sm mb-6">Connect With Us</h4>
+            <h4 className="font-lato uppercase tracking-widest text-accent text-sm mb-6">Connect</h4>
             <div className="flex justify-center space-x-6">
               <a href="#" className="text-cream hover:text-accent transition-colors duration-300">
                 <span className="sr-only">Facebook</span>
